@@ -1,0 +1,40 @@
+@startuml
+class Animal{
+     - name
+     - weight
+     - flyingType flies
+     ---
+     + tryToFly()
+     + setFlyingAbility()
+}
+
+
+interface Fly{
+ --- 
+     + fly(): String
+
+}
+
+class ItFly{
+---
+ + fly() : String
+}
+
+class ItCantFly{
+ + fly() : String
+}
+
+
+class Dog{
+}
+
+class Cat{
+}
+
+Animal -> Fly
+Animal --|> Dog
+Animal --|> Cat
+
+Fly --|> ItFly
+Fly --|> ItCantFly
+@enduml
